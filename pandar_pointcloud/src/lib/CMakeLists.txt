@@ -1,4 +1,5 @@
 add_library(pandar_rawdata rawdata.cc calibration.cc)
+add_dependencies(pandar_rawdata ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(pandar_rawdata 
                       ${catkin_LIBRARIES}
                       ${YAML_CPP_LIBRARIES})
