@@ -1,4 +1,5 @@
 add_library(pandar_rawdata_at128 rawdata.cc calibration.cc)
+add_dependencies(pandar_rawdata_at128 ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(pandar_rawdata_at128 
                       ${catkin_LIBRARIES}
                       ${YAML_CPP_LIBRARIES})
@@ -6,8 +7,9 @@ install(TARGETS pandar_rawdata_at128
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
-set_target_properties(pandar_rawdata_at128 PROPERTIES
-	COMPILE_FLAGS -std=c++11)
+# set_target_properties(pandar_rawdata_at128 PROPERTIES
+# 	COMPILE_FLAGS -std=c++11)
+set_property(TARGET pandar_rawdata_at128 PROPERTY CXX_STANDARD 14)
 
 
 add_library(pandar_input_at128 input.cc platUtil.cc fault_message.cc)
