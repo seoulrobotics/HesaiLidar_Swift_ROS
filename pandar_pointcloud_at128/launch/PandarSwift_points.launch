@@ -6,7 +6,7 @@
   <arg name="calibration" default="$(find pandar_pointcloud_at128)/params/corrections1.5.dat"/>
   <arg name="device_ip" default="192.168.1.201" />
   <arg name="host_ip" default="" />
-  <arg name="frame_id" default="PandarSwift" />
+  <arg name="frame_id" default="PandarSwift_AT128" />
   <arg name="manager" default="$(arg frame_id)_nodelet_manager" />
   <arg name="max_range" default="130.0" />
   <arg name="min_range" default="0.5" />
