@@ -17,6 +17,7 @@
   <run_depend>pandar_driver</run_depend>
   <run_depend>pandar_msgs</run_depend>
   <run_depend>pandar_pointcloud</run_depend>
+  <run_depend>pandar_pointcloud_at128</run_depend>
 
   <export>
     <metapackage/>

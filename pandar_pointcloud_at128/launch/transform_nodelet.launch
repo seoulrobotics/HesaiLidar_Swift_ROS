@@ -1,0 +1,28 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+  <arg name="calibration" default="$(find pandar_pointcloud_at128)/params/corrections1.5.dat"/>
+  <arg name="frame_id" default="PandarSwift" />
+  <arg name="manager" default="$(arg frame_id)_nodelet_manager" />
+  <arg name="max_range" default="130.0" />
+  <arg name="min_range" default="0.9" />
+  <arg name="data_type" default="lidar" />
+  <arg name="view_mode" default="1" />
+  <arg name="namespace" default="hesai"/>
+  <arg name="coordinate_correction_flag" default="false" />
+
+  <group if="$(eval data_type=='rosbag')">
+    <node pkg="nodelet" type="nodelet" ns="$(arg namespace)" name="$(arg manager)" args="manager" />
+  </group>
+
+  <node pkg="nodelet" type="nodelet" ns="$(arg namespace)" name="$(arg manager)_transform"
+        args="load pandar_pointcloud_at128/TransformNodelet $(arg manager)" >
+    <param name="calibration" value="$(arg calibration)"/>
+    <param name="frame_id" value="$(arg frame_id)"/>
+    <param name="max_range" value="$(arg max_range)"/>
+    <param name="min_range" value="$(arg min_range)"/>
+    <param name="view_mode"  value="$(arg view_mode)"/>
+    <param name="namespace" value="$(arg namespace)"/>
+    <param name="coordinate_correction_flag" value="$(arg coordinate_correction_flag)"/>
+  </node>
+</launch>
