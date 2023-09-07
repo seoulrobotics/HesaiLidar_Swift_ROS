@@ -7,6 +7,7 @@ message("OpenSSL include dir: ${OPENSSL_INCLUDE_DIR}")
 
 include_directories(
 	${OPENSSL_INCLUDE_DIR}
+	${PCL_INCLUDE_DIRS}
 )
 
 add_executable(pandar_cloud_node_at128 cloud_node.cc convert.cc driver.cc laser_ts.cpp tcp_command_client.c util.c)
@@ -14,7 +15,6 @@ add_dependencies(pandar_cloud_node_at128 ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(pandar_cloud_node_at128 pandar_rawdata_at128
 					  pandar_input_at128
 					  pcap
-					  ${PCL_INCLUDE_DIRS}
 					  ${OPENSSL_LIBRARIES}
                       ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
 					  
@@ -25,7 +25,6 @@ target_link_libraries(pandar_cloud_nodelet_at128
 					  pandar_rawdata_at128 
 					  pandar_input_at128
 					  pcap
-					  ${PCL_INCLUDE_DIRS}
 					  ${OPENSSL_LIBRARIES}
                       ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
 
@@ -34,7 +33,6 @@ add_dependencies(pandar_transform_node_at128 ${${PROJECT_NAME}_EXPORTED_TARGETS}
 target_link_libraries(pandar_transform_node_at128 pandar_rawdata_at128
 						pandar_input_at128
 						pcap
-						${PCL_INCLUDE_DIRS}
 						${OPENSSL_LIBRARIES}
 					  	${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
 
@@ -43,7 +41,6 @@ add_dependencies(pandar_transform_nodelet_at128 ${${PROJECT_NAME}_EXPORTED_TARGE
 target_link_libraries(pandar_transform_nodelet_at128 pandar_rawdata_at128
 						pandar_input_at128
 						pcap
-						${PCL_INCLUDE_DIRS}
 						${OPENSSL_LIBRARIES}
 					  ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
 install(TARGETS 
