@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(pandar_msgs)
 
 find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
+find_package(genmsg REQUIRED)
 
 add_message_files(
   DIRECTORY msg
@@ -10,6 +11,7 @@ add_message_files(
   PandarPacket.msg
   PandarScan.msg
 )
+
 generate_messages(DEPENDENCIES std_msgs)
 
 catkin_package(
