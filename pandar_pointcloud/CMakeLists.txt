@@ -49,6 +49,8 @@ include_directories(include ${catkin_INCLUDE_DIRS}
   ${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake
 )
 
+add_dependencies(pandar_rawdata pandar_msgs/PandarScan.h)
+
 catkin_package(
     CATKIN_DEPENDS ${${PROJECT_NAME}_CATKIN_DEPS}
     INCLUDE_DIRS include
