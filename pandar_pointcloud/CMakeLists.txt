@@ -18,7 +18,7 @@ set(${PROJECT_NAME}_CATKIN_DEPS
 )
 
 find_package(catkin REQUIRED COMPONENTS
-             ${${PROJECT_NAME}_CATKIN_DEPS} pcl_conversions REQUIRED)
+             ${${PROJECT_NAME}_CATKIN_DEPS} pcl_conversions)
 find_package(Boost COMPONENTS signals)
 
 # Resolve system dependency on yaml-cpp, which apparently does not
