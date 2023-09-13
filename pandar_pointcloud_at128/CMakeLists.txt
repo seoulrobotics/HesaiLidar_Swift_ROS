@@ -65,8 +65,8 @@ add_subdirectory(src/conversions)
 get_property(lib_targets DIRECTORY src/lib PROPERTY BUILDSYSTEM_TARGETS)
 get_property(conversions_targets DIRECTORY src/conversions PROPERTY BUILDSYSTEM_TARGETS)
 
-foreach(tgt IN LISTS lib_targets conversions_targets)
-  add_dependencies(${tgt} pandar_msgs_generate_messages_cpp)
+foreach(target IN LISTS lib_targets conversions_targets)
+  add_dependencies(${target} pandar_msgs_generate_messages_cpp)
 endforeach()
 
 include_directories(taskflow)
