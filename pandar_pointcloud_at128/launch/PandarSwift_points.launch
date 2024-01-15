@@ -17,7 +17,7 @@
   <arg name="repeat_delay" default="0.0" />
   <arg name="rpm" default="600.0" />
   <arg name="start_angle" default="0.0" />
-  <arg name="publish_model" default="points" />
+  <arg name="publish_model" default="point" />
   <arg name="view_mode" default="1" />
   <arg name="namespace" default="hesai"/>
   <arg name="multicast_ip"  default=""/>
